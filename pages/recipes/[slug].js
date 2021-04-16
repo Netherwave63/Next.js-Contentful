@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
     })
     return {
         paths,
-        fallback: false
+        fallback: true
     }
 }
 
@@ -31,6 +31,15 @@ export const getStaticProps = async ({
         content_type: 'recipe',
         'fields.slug': params.slug
     })
+
+    if (!items.length) {
+        return {
+            redirect: {
+                destination: '/recipes'
+            }
+        }
+    }
+
     return {
         props: {
             recipe: items[0],
@@ -42,8 +51,9 @@ export const getStaticProps = async ({
 const Recipe = ({
     recipe
 }) => {
-    const { title, featuredImage, cookingTime, ingredients, methods } = recipe.fields
+    if (!recipe) return <Skeleton />
 
+    const { title, featuredImage, cookingTime, ingredients, methods } = recipe.fields
     return (
         <section className="section">
             <div className="content">
@@ -75,6 +85,21 @@ const Recipe = ({
                     Methods:
                 </h3>
                 <div>{documentToReactComponents(methods)}</div>
+            </div>
+        </section>
+    )
+}
+
+const Skeleton = () => {
+    return (
+        <section className="section">
+            <div className="content">
+                <p style={{ padding: "12%", backgroundColor: "lightgray" }}></p>
+                <p style={{ padding: "16px", backgroundColor: "lightgray", maxWidth: "70%" }}></p>
+                <p style={{ padding: "8px", backgroundColor: "lightgray", maxWidth: "90%" }}></p>
+                <p style={{ padding: "8px", backgroundColor: "lightgray", maxWidth: "90%" }}></p>
+                <p style={{ padding: "8px", backgroundColor: "lightgray", maxWidth: "90%" }}></p>
+                <p style={{ padding: "8px", backgroundColor: "lightgray", maxWidth: "90%" }}></p>
             </div>
         </section>
     )
