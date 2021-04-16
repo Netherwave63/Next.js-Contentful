@@ -1,65 +1,21 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Next.js | Dictionary</title>
+        <meta name="description" content="This is the homepage" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <section className="section">
+        <h1 className="title">Homepage</h1>
+        <div className="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla accumsan arcu ac tempor. Curabitur ultricies tristique nisl ut sodales. Curabitur lacinia eget neque sit amet hendrerit. In in tortor ac metus bibendum efficitur vitae sed dolor. Sed velit sem, ultricies eget lacus nec, tincidunt hendrerit ante. Sed et velit lacinia, suscipit nunc at, volutpat dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec aliquet interdum dolor a ullamcorper. Mauris faucibus condimentum enim, sed maximus ipsum scelerisque euismod. Duis neque orci, pharetra tincidunt diam nec, lobortis vestibulum magna. Nullam varius, tellus nec sollicitudin congue, nunc magna pellentesque quam, at auctor dolor sapien eu nisi. Aenean accumsan mi non erat eleifend, sed vestibulum arcu dignissim. Proin justo risus, hendrerit a justo et, sodales sollicitudin est. Proin velit odio, fermentum vitae eleifend et, efficitur a nisi.</p>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      </section>
+    </>
   )
 }
+
+export default Home
